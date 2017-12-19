@@ -9,14 +9,19 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 
+import javax.sql.DataSource;
+
 @Configuration
 @EnableResourceServer
 @EnableWebSecurity
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
 	@Autowired
+	private DataSource dataSource;
+
+	@Autowired
     public void configureGlobal(final AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
+        auth.jdbcAuthentication().dataSource(dataSource)
         	.withUser("user").password("user").roles("ROLE");
     }
     
