@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 
-@SpringBootApplication
+//@SpringBootApplication
 @Import({ServiceDefaultApplicationContext.class})
 public class ServiceLauncher {
     public static void main(String[] args) {

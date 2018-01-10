@@ -31,7 +31,8 @@
 
         <default.tomcat-jdbc.version>8.0.36</default.tomcat-jdbc.version>
         <default.h2database.version>1.4.196</default.h2database.version>
-	</properties>
+        <default.liquibase.version>3.5.3</default.liquibase.version>
+    </properties>
 
 	<dependencies>
 		<dependency>
@@ -113,12 +114,17 @@
             <version>${default.hibernate-jpa-2.1-api.version}</version>
         </dependency>
 
-
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-jdbc</artifactId>
 			<version>${default.tomcat-jdbc.version}</version>
 		</dependency>
+
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>${default.liquibase.version}</version>
+        </dependency>
 
 		<!-- Test -->
 		<dependency>
@@ -135,7 +141,7 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>${default.h2database.version}</version>
-			<scope>test</scope>
+			<!--<scope>test</scope>-->
 		</dependency>
 	</dependencies>
 
