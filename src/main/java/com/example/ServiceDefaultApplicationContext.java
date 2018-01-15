@@ -2,13 +2,9 @@ package com.example;
 
 import com.example.config.AuthorizationServerConfig;
 import com.example.config.ResourceServerConfig;
-import com.example.config.WebSecurityConfig;
-import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration;
-import org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration;
-import org.springframework.boot.autoconfigure.security.SecurityFilterAutoConfiguration;
 import org.springframework.boot.autoconfigure.web.*;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -17,8 +13,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.orm.jpa.JpaTransactionManager;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -30,7 +24,6 @@ import javax.sql.DataSource;
 @Import({
         AuthorizationServerConfig.class,
         ResourceServerConfig.class,
-//        WebSecurityConfig.class,
 
         // web part
         WebMvcAutoConfiguration.class,

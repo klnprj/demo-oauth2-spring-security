@@ -55,8 +55,6 @@ public class DemoOauth2SpringSecurityApplicationTests {
 
     @Test
     public void givenAccessToken_whenGetSecureRequest_thenOk() throws Exception {
-//        String accessToken = obtainAccessToken("user", "user");
-        // todo: работающие тесты с BCrypt
         String accessToken = obtainAccessToken("admin@mail.ru", "password");
 
         assertNotNull(accessToken);
